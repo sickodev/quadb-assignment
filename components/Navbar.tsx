@@ -27,13 +27,13 @@ const Navbar = () => {
                     <h3 className='text-xl'>Save Me a Seat</h3>
                 </Link>
                 <button
-                    aria-controls={dialogId}
+                    htmlFor={dialogId}
                     onClick={() => myModal.showModal()}
                     className='border-2 rounded-full transition active:scale-95 hover:scale-105 p-1 shadow-sm shadow-white bg-gradient-to-b from-accent to-warning-content'
                 >
                     <UserIcon className='h-6 w-6 text-warning' />
                 </button>
-                <dialog id='user_modal' className='modal modal-middle'>
+                <dialog id={dialogId} className='modal modal-middle'>
                     <form method='dialog' className='modal-box'>
                         <h3 className='text-2xl font-bold py-3'>
                             User Information

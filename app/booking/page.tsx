@@ -68,15 +68,15 @@ const Booking = () => {
                 <div className='flex justify-between md:justify-end m-4'>
                     {/* Dialog */}
                     <button
-                        aria-controls={dialogId}
+                        htmlFor={dialogId}
                         onClick={() => myModal.showModal()}
                         className='btn w-full md:w-64 transition md:hover:bg-warning btn-outline btn-warning'
                     >
                         Book Now
                     </button>
-                    <dialog id='input_modal' className='modal modal-middle'>
+                    <dialog id={dialogId} className='modal modal-middle'>
                         <form method='dialog' className='modal-box'>
-                            <h3 className='font-bold text-2xl border-l-8 border-w'>
+                            <h3 className='font-bold text-2xl border-l-8 border-warning px-2'>
                                 Book Seats
                             </h3>
                             <div className='py-3 font-light'>
