@@ -68,6 +68,7 @@ const Booking = () => {
                 <div className='flex justify-between md:justify-end m-4'>
                     {/* Dialog */}
                     <button
+                        aria-controls={dialogId}
                         onClick={() => myModal.showModal()}
                         className='btn w-full md:w-64 transition md:hover:bg-warning btn-outline btn-warning'
                     >

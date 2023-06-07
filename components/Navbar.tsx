@@ -27,6 +27,7 @@ const Navbar = () => {
                     <h3 className='text-xl'>Save Me a Seat</h3>
                 </Link>
                 <button
+                    aria-controls={dialogId}
                     onClick={() => myModal.showModal()}
                     className='border-2 rounded-full transition active:scale-95 hover:scale-105 p-1 shadow-sm shadow-white bg-gradient-to-b from-accent to-warning-content'
                 >
