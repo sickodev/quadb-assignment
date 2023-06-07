@@ -1,6 +1,6 @@
 "use client";
 import { UserIcon } from "@heroicons/react/24/solid";
-import { setName, setAge } from "@/features/user/userSlice";
+
 import { useDispatch } from "react-redux";
 import { useState } from "react";
 import Link from "next/link";
