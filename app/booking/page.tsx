@@ -23,7 +23,7 @@ const Booking = () => {
         if (movie.title === "") {
             router.push("/");
         }
-    }, []);
+    }, [movie.title, router]);
 
     return (
         <div
