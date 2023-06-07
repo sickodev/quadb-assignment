@@ -5,6 +5,10 @@ import { useDispatch } from "react-redux";
 import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+
+const dialogId = "user_modal";
+const myModal = document.getElementById(dialogId) as HTMLDialogElement;
+
 const Navbar = () => {
     const router = useRouter();
     const handleClick = () => {
@@ -12,7 +16,7 @@ const Navbar = () => {
 
         localStorage.setItem("name", userName);
         router.refresh();
-        window.user_modal.close();
+        myModal.close();
     };
 
     const [userName, setUserName] = useState<string>("");
@@ -23,19 +27,13 @@ const Navbar = () => {
                     <h3 className='text-xl'>Save Me a Seat</h3>
                 </Link>
                 <button
-                    onClick={() => window.user_modal.showModal()}
+                    onClick={() => myModal.showModal()}
                     className='border-2 rounded-full transition active:scale-95 hover:scale-105 p-1 shadow-sm shadow-white bg-gradient-to-b from-accent to-warning-content'
                 >
                     <UserIcon className='h-6 w-6 text-warning' />
                 </button>
                 <dialog id='user_modal' className='modal modal-middle'>
                     <form method='dialog' className='modal-box'>
-                        <button
-                            htmlFor='user_modal'
-                            className='btn btn-sm btn-circle btn-error btn-outline absolute right-2 top-2'
-                        >
-                            ✕
-                        </button>
                         <h3 className='text-2xl font-bold py-3'>
                             User Information
                         </h3>

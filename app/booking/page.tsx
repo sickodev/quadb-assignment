@@ -4,6 +4,8 @@ import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 
+const dialogId = "input_modal";
+const myModal = document.getElementById(dialogId) as HTMLDialogElement;
 const Booking = () => {
     const movie = useSelector((state: any) => state.movie);
     const url = movie.image;
@@ -11,7 +13,7 @@ const Booking = () => {
     const [tickets, setTickets] = useState("1");
 
     const handleClick = () => {
-        window.input_modal.close();
+        myModal.close();
         alert(
             `${localStorage.getItem(
                 "name"
@@ -66,20 +68,16 @@ const Booking = () => {
                 <div className='flex justify-between md:justify-end m-4'>
                     {/* Dialog */}
                     <button
-                        onClick={() => window.input_modal.showModal()}
+                        onClick={() => myModal.showModal()}
                         className='btn w-full md:w-64 transition md:hover:bg-warning btn-outline btn-warning'
                     >
                         Book Now
                     </button>
                     <dialog id='input_modal' className='modal modal-middle'>
                         <form method='dialog' className='modal-box'>
-                            <button
-                                htmlFor='input_modal'
-                                className='btn btn-sm btn-circle btn-outline btn-error absolute right-2 top-2'
-                            >
-                                ✕
-                            </button>
-                            <h3 className='font-bold text-2xl'>Book Seats</h3>
+                            <h3 className='font-bold text-2xl border-l-8 border-w'>
+                                Book Seats
+                            </h3>
                             <div className='py-3 font-light'>
                                 <h4 className='text-lg'>
                                     Movie :{" "}
